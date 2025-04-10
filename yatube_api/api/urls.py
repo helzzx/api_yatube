@@ -1,5 +1,5 @@
 from rest_framework.routers import DefaultRouter
-from drf_nested_routers.routers import NestedSimpleRouter
+from rest_framework_nested.routers import NestedSimpleRouter
 from django.urls import include, path
 from api.views import PostViewSet, GroupViewSet, CommentViewSet
 from rest_framework.authtoken import views
