@@ -9,7 +9,7 @@ router = DefaultRouter()
 router.register('posts', PostViewSet)
 router.register('groups', GroupViewSet)
 
-# Вложенный роутер для комментариев 
+
 posts_router = routers.NestedSimpleRouter(router, 'posts', lookup='post')
 posts_router.register('comments', CommentViewSet, basename='post-comments')
 
