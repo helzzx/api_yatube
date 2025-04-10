@@ -8,10 +8,7 @@ from .serializers import PostSerializer, CommentSerializer, GroupSerializer
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        if (
-            request.method in permissions.SAFE_METHODS or
-            request.method == 'POST'
-        ):
+        if request.method in permissions.SAFE_METHODS or request.method == 'POST':
             return True
         return obj.author == request.user
 
